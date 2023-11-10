@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>links</title>
+    <link rel="stylesheet" href="static/css/index.css" />
+    
+    <!-- CSS pertaining to fontawesome icon rendering -->
+    <link rel="stylesheet" href="static/css/brands.css"/>
+    <link rel="stylesheet" href="static/css/fontawesome.css"/>
+    
+  </head>
+  <body>
+    <section class="header">
+      <h1 class="title">{{title}}</h1>
+      <h3 class="subtitle">{{subtitle}}</h3>
+    </section>
+      
+    <section class="links">
+      {{#each links}}
+        <div
+          class="link"
+
+          style="
+            {{#if this.color.primary}}background: {{this.color.primary}};{{/if}}
+            {{#if this.color.secondary}}color: {{this.color.secondary}};{{/if}}
+          "
+        >
+          {{#if this.icon}}
+            <div class="link-icon fab fa-{{this.icon}}"></div>
+          {{/if}}
+
+          <a class="link-content" href={{this.url}}>
+            <b class="link-name">{{this.name}}</b>
+
+            {{#if this.description}}
+              <p class="link-description">{{this.description}}</p class="link-description">
+            {{/if}}
+          </a>          
+        </div>
+      {{/each}}
+    </section>
+
+    {{#if this.footer}}
+    <section class="footer">
+      <p>{{this.footer}}</p>
+    </section>
+    {{/if}}
+  </body>
+</html>
