@@ -2,7 +2,7 @@
 
 [![GitHub License][shield-license]][license]
 
-![Minidash screenshot][screenshot]
+![links screenshot][screenshot]
 
 links is a simple, self-hostable and open source link aggregator that is meant to serve as an alternative to [littlelink][littlelink] or [linktree][linktree].
 

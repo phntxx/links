@@ -12,11 +12,11 @@ RUN cargo build --release
 FROM alpine:latest
 
 WORKDIR /app
-COPY --from=build --chmod=711 /app/target/release/minidash .
+COPY --from=build --chmod=711 /app/target/release/links .
 COPY --chmod=711 entrypoint.sh .
 COPY data defaults
 
-ENV RUST_LOG="minidash"
+ENV RUST_LOG="links"
 ENV CONFIG_FILE="/app/data/config.yml"
 ENV TEMPLATE_FILE="/app/data/template.hbs"
 ENV STATIC_PATH="/app/data/static"
