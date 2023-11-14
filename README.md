@@ -1,24 +1,20 @@
-# Minidash - because [dashboard][dashboard] is bloat.
+# links
 
-[![Docker Cloud Build Status][shield-docker]][docker]
-[![Docker Image Size (latest)][shield-docker-image]][docker]
 [![GitHub License][shield-license]][license]
 
 ![Minidash screenshot][screenshot]
 
-Minidash is a reinterpretation of the original [dashboard project][dashboard].
-Its goal is to be a lot more lightweight than the original project, whilst being simpler to configure and run.
-It uses Rust for setting up a web server and reading the configuration, making the source code incredibly compact.
+links is a simple, self-hostable and open source link aggregator that is meant to serve as an alternative to [littlelink][littlelink] or [linktree][linktree].
 
 ## Running this project
 
 To run this project, simply run:
 
 ```sh
-docker run -it -p 3000:3000 -v $PWD/data:/app/data phntxx/minidash
+docker run -it -p 3000:3000 -v $PWD/data:/app/data ghcr.io/phntxx/links
 ```
 
-You will however need the `data`-directory for this. Just download [the data directory from this repository](https://github.com/phntxx/minidash/tree/main/data/) as a starting-off point and then adjust that to fit your needs.
+You will however need the `data`-directory for this. Just download [the data directory from this repository](https://github.com/phntxx/links/tree/main/data/) as a starting-off point and then adjust that to fit your needs.
 
 ## Development
 
@@ -44,25 +40,23 @@ The configuration file is a YAML file that contains all of your links, be it app
 
 ```yml
 ---
-apps:
+title: title
+subtitle: subtitle
+footer: footer
+links:
 
-  app_name:
-    url: app_url
-    display_url: app_display_url
-    icon: app_icon
-
-  ...
-
-bookmarks:
-
-  group_name:
-    - name: group_item_name
-      url: group_item_url
-
-    ...
-
+  - name: link-name
+    url: link-url
+    icon: link-icon (optional)
+    description: link-description (optional)
+    color:
+      primary: link-color-primary (optional)
+      secondary: link-color-secondary (optional)
+    
   ...
 ```
+
+**NOTE:** Brand icons are fetched using [font awesome's brand icon catalog][font-awesome]. So for e.g. the discord icon, simply use `discord` as the value of the `ìcon` parameter.
 
 ### Environment variables
 
@@ -77,14 +71,13 @@ These three variables need to be set when running `cargo run` in order for the p
 
 Additionally, since this project uses the [`env-logger`][env-logger] crate, the `RUST_LOG` environment variable can also be modified to adjust logging levels.
 
-[dashboard]: https://github.com/phntxx/dashboard
 [screenshot]: img/screenshot.png
+[font-awesome]: https://fontawesome.com/search?o=r&f=brands
+[littlelink]: https://github.com/sethcottle/littlelink
+[linktree]: https://linktr.ee
 [handlebars]: https://handlebarsjs.com
-[data-dir]: https://github.com/phntxx/minidash/tree/main/data
-[template]: https://github.com/phntxx/minidash/tree/main/data/template.hbs
+[data-dir]: https://github.com/phntxx/links/tree/main/data
+[template]: https://github.com/phntxx/links/tree/main/data/template.hbs
 [env-logger]: https://crates.io/crates/env_logger
-[docker]: https://hub.docker.com/r/phntxx/minidash
-[license]: https://github.com/phntxx/minidash/LICENSE
-[shield-docker]: https://img.shields.io/docker/cloud/build/phntxx/minidash
-[shield-docker-image]: https://img.shields.io/docker/image-size/phntxx/minidash/latest
-[shield-license]: https://img.shields.io/github/license/phntxx/minidash.svg
+[license]: https://github.com/phntxx/links/LICENSE
+[shield-license]: https://img.shields.io/github/license/phntxx/links.svg

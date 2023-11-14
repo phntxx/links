@@ -20,11 +20,12 @@ pub struct Link {
 pub struct Config {
     title: String,
     subtitle: String,
+    footer: Option<String>,
     links: Vec<Link>
 }
 
 impl Config {
     pub fn new() -> Config {
-        Config {title: String::new(), subtitle: String::new(), links: Vec::new()}
+        Config {title: String::new(), subtitle: String::new(), footer: Some(String::new()), links: Vec::new()}
     }
 }

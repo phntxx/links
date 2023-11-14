@@ -1,29 +1,10 @@
 title: links
 subtitle: a simple, open-source alternative to linktree
-footer: testing!
+footer: Thanks for stopping by!
 links:
   - name: Instagram
     url: https://example.com/instagram
-    description: test
-    color:
-      primary: "#ff00ff"
-      secondary: "#ff6600"
-
-  - name: Snapchat
-    url: https://example.com/snapchat
-    icon: snapchat
-    description: snapchat is cool
-
-  - name: Patreon
-    url: https://example.com/patreon
-    icon: patreon
-    color:
-      primary: "#ff00ff"
-      secondary: "#ff6600"
-
-  - name: YouTube
-    url: https://example.com/youtube
-    icon: youtube
+    icon: instagram
 
   - name: GitHub
     url: https://example.com/github
@@ -39,12 +20,9 @@ links:
 
   - name: LinkedIn
     url: https://example.com/linkedin
+    description: my professional cv!
     icon: linkedin
-  
+
   - name: About
     url: https://example.com/about
     icon: creative-commons-by
-  
-  - name: X
-    url: https://example.com/x
-    icon: x-twitter

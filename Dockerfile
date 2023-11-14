@@ -23,4 +23,4 @@ ENV STATIC_PATH="/app/data/static"
 ENV ADDRESS="0.0.0.0:3000"
 
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["./minidash"]
+CMD ["./links"]

@@ -9,6 +9,7 @@
     
   </head>
   <body>
+    <div class="container">
     <section class="header">
       <h1 class="title">{{title}}</h1>
       <h3 class="subtitle">{{subtitle}}</h3>
@@ -16,9 +17,9 @@
       
     <section class="links">
       {{#each links}}
-        <div
+        <a
           class="link"
-
+          href={{this.url}}
           style="
             {{#if this.color.primary}}background: {{this.color.primary}};{{/if}}
             {{#if this.color.secondary}}color: {{this.color.secondary}};{{/if}}
@@ -28,14 +29,14 @@
             <div class="link-icon fab fa-{{this.icon}}"></div>
           {{/if}}
 
-          <a class="link-content" href={{this.url}}>
+          <div class="link-content">
             <b class="link-name">{{this.name}}</b>
 
             {{#if this.description}}
               <p class="link-description">{{this.description}}</p class="link-description">
             {{/if}}
-          </a>          
-        </div>
+          </div>
+        </a>
       {{/each}}
     </section>
 

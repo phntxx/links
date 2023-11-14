@@ -24,12 +24,12 @@
 
 body {
   font-family: "Helvetica 45 Light", sans-serif;
-
   margin: auto;
   width: 100%;
   height: 100%;
 
-
+  display: grid;
+  place-items: center;
 }
 
 @media (min-width: 1366px) {
@@ -38,7 +38,11 @@ body {
   }
 }
 
-.header {
+.container {
+  padding: 1rem;
+}
+
+.header, .footer {
   text-align: center;
 }
 
@@ -49,12 +53,16 @@ body {
   align-items: center;
 }
 
-.link {
+.link, .link:visited {
   border: 1px solid;
   border-radius: 5px;
   padding: 0.5em;
   margin: 0.5em;
   width: 384px;
+
+  color: inherit;
+
+  text-decoration: none;
 
   display: flex;
   justify-content: center;
