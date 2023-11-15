@@ -21,6 +21,13 @@ else
   rm -rf defaults/template.hbs
 fi
 
+if [[ ! -f $STATIC_PATH ]]; then
+  mkdir -p "$STATIC_PATH"
+  mv defaults/static/* $STATIC_PATH
+else
+  rm -rf defaults/static
+fi
+
 if [[ ! "$(ls -A defaults)" ]]; then
   rm -rf defaults
 fi
