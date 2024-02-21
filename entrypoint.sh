@@ -8,7 +8,7 @@ set -eu
 if [[ ! -f $CONFIG_FILE ]]; then
   __DIRNAME="$(dirname $CONFIG_FILE)"
   mkdir -p $__DIRNAME
-  cp defaults/config.yml $CONFIG_FILE
+  cp defaults/config.yml $CONFIG_FILE || true
 else
   rm -rf defaults/config.yml
 fi
@@ -16,9 +16,16 @@ fi
 if [[ ! -f $TEMPLATE_FILE ]]; then
   __DIRNAME="$(dirname $TEMPLATE_FILE)"
   mkdir -p $__DIRNAME
-  cp defaults/template.hbs $TEMPLATE_FILE
+  cp defaults/template.hbs $TEMPLATE_FILE || true
 else
   rm -rf defaults/template.hbs
+fi
+
+if [[ ! -f $STATIC_PATH ]]; then
+  mkdir -p "$STATIC_PATH"
+  mv defaults/static/* $STATIC_PATH || true
+else
+  rm -rf defaults/static
 fi
 
 if [[ ! "$(ls -A defaults)" ]]; then
