@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <title>links</title>
     <link rel="stylesheet" href="static/css/index.css" />
@@ -6,17 +7,16 @@
     <!-- CSS pertaining to fontawesome icon rendering -->
     <link rel="stylesheet" href="static/css/brands.css"/>
     <link rel="stylesheet" href="static/css/fontawesome.css"/>
-    
   </head>
   <body>
     <div class="container">
     <section class="header">
-      <h1 class="title">{{title}}</h1>
-      <h3 class="subtitle">{{subtitle}}</h3>
+      <h1 class="title">{{state.title}}</h1>
+      <h3 class="subtitle">{{state.subtitle}}</h3>
     </section>
       
     <section class="links">
-      {{#each links}}
+      {{#each state.links}}
         <a
           class="link"
           href={{this.url}}
@@ -40,9 +40,9 @@
       {{/each}}
     </section>
 
-    {{#if this.footer}}
+    {{#if state.footer}}
     <section class="footer">
-      <p>{{this.footer}}</p>
+      <p>{{state.footer}}</p>
     </section>
     {{/if}}
   </body>
